@@ -1,0 +1,22 @@
+
+<h1> Clima</h1>
+<h2 id="pais">Chile -</h2>
+
+
+<nav>
+    <ul ngbNav [(activeId)]="activeId" class="nav-tabs">
+        <li [ngbNavItem]="1">
+            <a [routerLink]="['/']" routerLink ngbNavLink>Valparaíso</a>
+        </li>
+        <li [ngbNavItem]="2">
+            <a [routerLink]="['/stgo']" routerLink ngbNavLink>Metropolitana</a>
+        </li>
+        <li [ngbNavItem]="3">
+            <a [routerLink]="['/biobio']" routerLink ngbNavLink>Bio Bio</a>
+        </li>
+        <li [ngbNavItem]="4">
+            <a [routerLink]="['/araucania']" routerLink ngbNavLink>Araucania</a>
+        </li>
+    </ul>
+    
+</nav>

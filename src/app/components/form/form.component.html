@@ -1,0 +1,74 @@
+<div>
+    <form [formGroup]="formulario" (ngSubmit)="validacion()">
+        <ul>
+            <li>
+                <label>Región</label>
+                <select class=" form-control form-control-sm" formControlName="region">
+                <option></option>
+                <option>Valparaíso</option>
+                <option>Metropolitana</option>
+                <option>Bio Bio</option>
+                <option>Araucania</option>
+                </select>
+                
+            </li>
+            <li>
+                <div>Estado del clima</div> 
+                <ul>
+                    <li>
+                        <input class="form-check-input" type="radio" formControlName="clima" name="estado" id="soleado" >
+                        <label class="form-check-label">Soleado</label>
+                    </li>
+                    <li>
+                        <input class="form-check-input" type="radio" formControlName="clima" name="estado" id="lluvioso" >
+                        <label class="form-check-label">Lluvioso</label>
+                    </li>
+                    <li>
+                        <input class="form-check-input" type="radio" formControlName="clima" name="estado" id="nublado" >
+                        <label class="form-check-label">Nublado</label>
+                    </li>
+                    <li>
+                        <input class="form-check-input" type="radio" formControlName="clima" name="estado" id="tormenta" >
+                        <label class="form-check-label">Tormenta</label>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <label class="form-label">Día</label>
+                <select class=" form-control form-control-sm" formControlName="dia">
+                <option></option>
+                <option>Lunes</option>
+                <option>Martes</option>
+                <option>Miercoles</option>
+                <option>Jueves</option>
+                <option>Viernes</option>
+                <option>sabado</option>
+                <option>Domingo</option>
+                </select>
+            </li>
+            <li>
+                <label class="form-label">Temperatura</label>
+                <input class="form-control form-control-sm" type="text" formControlName="Temperatura">
+                <div *ngIf="formulario.controls['Temperatura'].invalid && (formulario.controls['temperatura'].dirty || formulario.controls['temperatura'].touched)">
+                    Campo requerido
+                </div>
+            </li>
+            <li>
+                <div>Grados</div> 
+                <ul>
+                    <li>
+                        <input class="form-check-input" type="radio" formControlName="grados" name="grados" id="c" >
+                        <label class="form-check-label">Celsius</label>
+                    </li>
+                    <li>
+                        <input class="form-check-input" type="radio" formControlName="grados" name="grados" id="f" >
+                        <label class="form-check-label">Fahrenheit</label>
+                    </li>
+                </ul>
+            </li>
+            <li class="mt-3">
+                <button type="submit" [disabled]='!formulario.valid' class="btn btn-success">Actualizar</button>
+            </li>
+        </ul>
+    </form>
+</div>

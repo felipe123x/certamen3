@@ -1,0 +1,36 @@
+
+    <p class="region">Metropolitana</p>
+    <ul ngbNav [(activeId)]="activeId" class="nav-tabs" id="graditos">
+        <li [ngbNavItem]="1">
+            <a ngbNavLink>Celsius</a>
+        </li>
+        <li [ngbNavItem]="2">
+            <a ngbNavLink>Fahrenheit</a>
+        </li>
+
+    </ul>
+
+
+<div *ngIf="activeId==1">
+    <ul ngbNav [(activeId)]="activeId" class="nav-tabs">
+        <li *ngFor="let item of listaDiasStgo" [ngbNavItem]="1">
+            <a [routerLink]="['/form']" ngbNavLink>{{item.nombre}}</a>
+            <img src="../../assets/{{item.imagen}}" alt="">
+            <p> {{item.temperatura}}°</p>
+            <p>{{item.clima}}</p>
+        </li>
+    </ul>
+</div>
+
+<div *ngIf="activeId==2">
+    <ul ngbNav [(activeId)]="activeId" class="nav-tabs">
+        <li *ngFor="let item of listaDiasStgo" [ngbNavItem]="2">
+            <a [routerLink]="['/form']" ngbNavLink>{{item.nombre}}</a>
+            <img src="../../assets/{{item.imagen}}" alt="">
+            <p> {{convertir(item.temperatura)}}°</p>
+            <p>{{item.clima}}</p>
+        </li>
+    </ul>
+</div>
+
+    <p>Al dar click sobre cada día permitirá actualizar la información</p>   
